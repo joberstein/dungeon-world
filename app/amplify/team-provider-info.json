@@ -1,0 +1,25 @@
+{
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "dungeon-world-dev-20190919225622-authRole",
+            "UnauthRoleArn": "arn:aws:iam::752983187404:role/dungeon-world-dev-20190919225622-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::752983187404:role/dungeon-world-dev-20190919225622-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "dungeon-world-dev-20190919225622-deployment",
+            "UnauthRoleName": "dungeon-world-dev-20190919225622-unauthRole",
+            "StackName": "dungeon-world-dev-20190919225622",
+            "StackId": "arn:aws:cloudformation:us-east-1:752983187404:stack/dungeon-world-dev-20190919225622/3a369e50-db52-11e9-a394-0a3a983b5e88"
+        },
+        "categories": {
+            "auth": {
+                "dungeonworlde228b56e": {},
+                "dungeonworld40ce08f0": {}
+            },
+            "function": {
+                "dungeonworlde228b56ePostConfirmation": {
+                    "GROUP": "dungeon-world"
+                }
+            }
+        }
+    }
+}
