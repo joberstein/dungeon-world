@@ -1,0 +1,61 @@
+.summary {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid #333;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  padding-bottom: 10px;
+  box-sizing: border-box;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 15px 10px;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+}
+
+.link {
+  color: #333;
+  text-decoration: none;
+}
+
+.characterPortrait {
+  flex: 0 0 auto;
+  width: 180px;
+  height: 180px;
+  border: 1px solid #aaa;
+  border-radius: 8px 0 0 8px;
+  margin: 15px 20px 5px;
+}
+
+.characterData {
+  flex: 1 1 auto;
+  margin: 5px 20px 5px 5px;
+}
+
+.dataPoint {
+  margin-bottom: 0;
+}
+
+.mainDataPoint {
+  margin-bottom: 10px;
+}
+
+.subDataPoint {
+  font-size: 18px;
+}
+
+@media screen and (max-width: 750px) {
+  .characterPortrait {
+    display: none;
+  }
+}

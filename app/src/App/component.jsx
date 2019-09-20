@@ -1,20 +1,14 @@
 import React from 'react';
 import { withAuthenticator } from 'aws-amplify-react';
-import logo from 'App/logo.svg';
-import styles from 'App/styles.module.scss';
+import {Route} from "react-router";
+import {BrowserRouter as Router} from "react-router-dom";
+import {ROUTE_BASE} from "routes";
+import CharacterSelection from "CharacterSelection/component";
 
 const App = () => (
-    <div className={styles.app}>
-      <header className={styles.header}>
-        <img src={logo} className={styles.logo} alt="logo" />
-        <p>
-          Sample starting page.
-        </p>
-        <a className={styles.link} href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router basename={process.env.PUBLIC_URL}>
+        <Route path={ROUTE_BASE} component={CharacterSelection} />
+    </Router>
 );
 
 export default withAuthenticator(App, true, null, null, null, {

@@ -1,0 +1,30 @@
+.container {
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 60px 0;
+  box-sizing: border-box;
+  margin: 30px auto;
+}
+
+.headerText {
+  margin-bottom: 45px;
+}
+
+.characters {
+  max-width: 850px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media screen and (max-width: 750px) {
+  .container {
+    width: 100%;
+    padding: 0 20px;
+    margin-top: 0;
+  }
+}
