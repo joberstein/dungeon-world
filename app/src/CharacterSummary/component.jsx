@@ -2,7 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import cn from "classnames";
 import {Link} from "react-router-dom";
-import styles from "CharacterSummary/styles.module.scss"
+import styles from "CharacterSummary/styles.module.scss";
+import Character from "Character/component";
 import * as routes from "routes";
 
 const CharacterSummary = ({character, onClick}) => (
@@ -22,7 +23,7 @@ const CharacterSummary = ({character, onClick}) => (
                 </div>
                 <div className={styles.row}>
                     <span className={cn(styles.dataPoint, styles.subDataPoint)}>
-                        {character.race}
+                        {character.race.name}
                     </span>
                 </div>
                 <div className={styles.row}>
@@ -40,14 +41,7 @@ CharacterSummary.defaultProps = {
 };
 
 CharacterSummary.propTypes = {
-    character: PropTypes.shape({
-        id: PropTypes.number.isRequired,
-        name: PropTypes.string,
-        level: PropTypes.number.isRequired,
-        race: PropTypes.string,
-        specialty: PropTypes.string
-    }).isRequired,
-
+    character: PropTypes.shape(Character.propTypes),
     onClick: PropTypes.func
 };
 

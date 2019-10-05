@@ -1,0 +1,101 @@
+.container {
+  max-width: 980px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.character {
+  margin: 15px;
+}
+
+.name, .specialty {
+  margin-bottom: 0;
+}
+
+.specialty {
+  margin: 0 0 25px;
+  font-weight: 500;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 48%;
+}
+
+.dataGroup {
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+  border: 1px solid #333;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+.age,
+.looks {
+  font-size: 21px;
+  margin-bottom: 5px;
+}
+
+.age__key,
+.looks__key {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.race,
+.alignment,
+.currentLevel {
+  margin-top: 0;
+}
+
+.race__description,
+.alignment__description,
+.nextLevel {
+  font-size: 20px;
+}
+
+.experienceBar {
+  margin-top: 5px;
+  max-width: 90%;
+}
+
+.stat {
+  height: 21px;
+  margin-bottom: 8px;
+}
+
+.statLabel {
+  flex: 0 1 70px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.statAbbreviation {
+  font-weight: 500;
+}
+
+.statModifier {
+  margin-right: 10px;
+}
+
+@media screen and (max-width: 750px) {
+  .specialty {
+    margin-bottom: 15px;
+  }
+
+  .column {
+    width: 100%;
+  }
+}
