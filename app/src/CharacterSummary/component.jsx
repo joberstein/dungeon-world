@@ -7,7 +7,7 @@ import Character from "Character/component";
 import * as routes from "routes";
 
 const CharacterSummary = ({character, onClick}) => (
-    <Link to={`${routes.ROUTE_CHARACTERS}/${character.id}`} onClick={() => onClick(character.id)} className={styles.link}>
+    <Link to={routes.ROUTE_CHARACTER} onClick={() => onClick(character.id)} className={styles.link}>
         <div className={styles.summary}>
             <div className={cn(styles.column, styles.characterPortrait)}>
                 <img src="" alt="Character Portrait"/>

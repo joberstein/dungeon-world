@@ -91,6 +91,10 @@
 }
 
 @media screen and (max-width: 750px) {
+  .name {
+    margin-top: 0;
+  }
+
   .specialty {
     margin-bottom: 15px;
   }

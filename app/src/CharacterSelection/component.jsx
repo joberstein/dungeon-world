@@ -1,9 +1,10 @@
 import React from "react";
-import {Route, Switch} from "react-router";
 import {BrowserRouter as Router} from "react-router-dom";
+import {Route, Switch} from "react-router";
 import CharacterSummary from "CharacterSummary/component";
 import styles from "CharacterSelection/styles.module.scss";
 import Character from "Character/component";
+import Navigation from "Navigation/component";
 import * as routes from "routes";
 
 class CharacterSelection extends React.Component {
@@ -11,6 +12,14 @@ class CharacterSelection extends React.Component {
     constructor(props) {
         super(props);
         this.state = {characterId: undefined};
+    }
+
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        const {pathname} = this.props.location;
+
+        if (pathname !== prevProps.location.pathname && pathname === routes.ROUTE_BASE) {
+            this.selectCharacter(undefined);
+        }
     }
 
     render = () => this.state.characterId ? this.renderRoutes() : this.renderCharacterOptions();
@@ -29,14 +38,15 @@ class CharacterSelection extends React.Component {
     );
 
     renderRoutes = () => (
-        <Router basename={`${routes.ROUTE_CHARACTERS}/${this.state.characterId}`}>
+        <Router basename={this.props.match.path}>
+            <Navigation/>
             <Switch>
-                <Route exact path={routes.ROUTE_BASE} render={() => <Character {...data.find(c => c.id === this.state.characterId)} />}/>
+                <Route path={routes.ROUTE_CHARACTER} render={() => <Character {...data.find(c => c.id === this.state.characterId)} />} />
+                <Route path={routes.ROUTE_BONDS} />
+                <Route path={routes.ROUTE_SESSIONS} />
                 <Route path={routes.ROUTE_ACTIONS} />
                 <Route path={routes.ROUTE_BAG} />
                 <Route path={routes.ROUTE_BATTLE} />
-                <Route path={routes.ROUTE_BONDS} />
-                <Route path={routes.ROUTE_IDENTITY} />
             </Switch>
         </Router>
     );
