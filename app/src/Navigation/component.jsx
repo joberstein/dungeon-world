@@ -73,7 +73,7 @@ class Navigation extends React.Component {
         return (
             <div className={styles.mobileContainer}>
                 <div className={styles.open}>
-                    <Menu onClick={this.openNavigation}/>
+                    <Menu fontSize="large" onClick={this.openNavigation}/>
                 </div>
             </div>
         );
@@ -83,7 +83,11 @@ class Navigation extends React.Component {
         return (
             <React.Fragment>
                 {Object.keys(ROUTES).map(routePath => (
-                    <NavLink key={routePath} to={routePath} className={styles.link} activeClassName={styles.active}>
+                    <NavLink key={routePath}
+                             to={routePath}
+                             className={styles.link}
+                             activeClassName={styles.active}
+                             onClick={this.closeNavigation}>
                         {ROUTES[routePath]}
                     </NavLink>
                 ))}
