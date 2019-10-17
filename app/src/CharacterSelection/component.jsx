@@ -4,6 +4,7 @@ import {Route, Switch} from "react-router";
 import CharacterSummary from "CharacterSummary/component";
 import styles from "CharacterSelection/styles.module.scss";
 import Character from "Character/component";
+import Bonds from "Bonds/component";
 import Navigation from "Navigation/component";
 import * as routes from "routes";
 
@@ -41,8 +42,8 @@ class CharacterSelection extends React.Component {
         <Router basename={this.props.match.path}>
             <Navigation/>
             <Switch>
-                <Route path={routes.ROUTE_CHARACTER} render={() => <Character {...data.find(c => c.id === this.state.characterId)} />} />
-                <Route path={routes.ROUTE_BONDS} />
+                <Route path={routes.ROUTE_CHARACTER} render={() => <Character {...this.getMockCharacterData()} />} />
+                <Route path={routes.ROUTE_BONDS} render={() => <Bonds bonds={this.getMockCharacterData().bonds}/>} />
                 <Route path={routes.ROUTE_SESSIONS} />
                 <Route path={routes.ROUTE_ACTIONS} />
                 <Route path={routes.ROUTE_BAG} />
@@ -52,6 +53,7 @@ class CharacterSelection extends React.Component {
     );
 
     selectCharacter = characterId => this.setState({characterId});
+    getMockCharacterData = () => data.find(c => c.id === this.state.characterId);
 }
 
 export default CharacterSelection;
@@ -107,7 +109,27 @@ const data = [
             intelligence: 13,
             strength: 15,
             wisdom: 12
-        }
+        },
+        bonds: [
+            {
+                id: 1,
+                companion: "Yasha",
+                description: "They have felt the hellish touch of fire, now they know my strength.",
+                completed: false
+            },
+            {
+                id: 2,
+                companion: "Kiya",
+                description: "I will teach them the true meaning of sacrifice.",
+                completed: true
+            },
+            {
+                id: 3,
+                companion: "Steve",
+                description: "I cast something into the fire for them and still owe them their due.",
+                completed: false
+            }
+        ]
     }, {
         id: 3,
         name: "Yosha",

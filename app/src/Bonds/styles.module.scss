@@ -1,0 +1,87 @@
+.tabs {
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.tabList {
+  margin: 0 0 25px;
+  padding: 0;
+  border: none;
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+}
+
+.tab {
+  padding: 12px 0 15px;
+  cursor: pointer;
+  flex: 1 0 auto;
+  text-align: center;
+  font-size: 22px;
+  margin: 0 15px 0;
+  border: none;
+}
+
+.selectedTab {
+  border-bottom: 8px solid lightskyblue;
+}
+
+.tabPanel {
+  margin: 0 auto;
+  width: 75%;
+}
+
+.noBonds {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 20px;
+}
+
+.addBondButton {
+  width: 100%;
+  margin: 30px auto;
+  display: block;
+  padding: 20px 0;
+  border: 0;
+  background-color: lightskyblue;
+  color: white;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  font-weight: bold;
+  cursor: pointer;
+
+  &:disabled {
+    background-color: #ddd;
+    color: gray;
+    cursor: not-allowed;
+  }
+}
+
+.addBond {
+  height: 24px;
+  line-height: 24px;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon__add {
+  height: 100% !important; // override the default icon height
+  line-height: 100%;
+  margin-right: 5px;
+}
+
+@media screen and (max-width: 750px) {
+  .tab {
+    margin: 0;
+  }
+
+  .tabPanel {
+    width: 90%;
+  }
+
+  .addBondButton {
+    padding: 10px 0;
+  }
+}

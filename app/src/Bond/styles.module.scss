@@ -1,0 +1,151 @@
+
+.container {
+  display: flex;
+  margin-bottom: 25px;
+}
+
+.bond {
+  flex: 1 1 auto;
+  padding: 25px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.companion {
+  margin: 0 0 5px;
+}
+
+.description {
+  font-size: 18px;
+}
+
+.status {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 0 0 auto;
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.checkbox {
+  border: 1px solid #333;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
+.icon {
+  height: 16px;
+  line-height: 16px;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.icon--edit {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
+.icon--save {
+  margin-right: 20px;
+}
+
+.icon__edit,
+.icon__cancel,
+.icon__save,
+.icon__delete {
+  height: 100% !important; // override the default icon height
+  line-height: 100%;
+  margin-right: 3px;
+}
+
+.restore {
+  cursor: pointer;
+}
+
+.icon__complete {
+  display: none !important;
+  position: absolute;
+}
+
+.icon__complete--checked {
+  display: inline-block !important;
+  animation: complete-bond .8s;
+  animation-timing-function: ease;
+  transform-origin: 0 100%;
+}
+
+.bond--editing {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  &.bond {
+    padding: 0;
+  }
+
+  .companion,
+  .description {
+    margin: 0;
+    width: 100%;
+    border: 1px solid #888;
+    padding: 5px 0 5px 8px;
+    box-sizing: border-box;
+  }
+
+  .companion {
+    margin-bottom: 8px;
+    font-weight: bold;
+    font-size: 18px;
+  }
+
+  .description {
+    resize: none;
+    margin-bottom: 10px;
+  }
+
+  .buttons__row {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .buttons__row__left {
+    display: flex;
+    align-items: center;
+  }
+}
+
+@keyframes complete-bond {
+  0% {
+    clip: rect(0, 0, 0, 0);
+  }
+
+  20% {
+    clip: rect(12px, 10px, 24px,0px);
+  }
+
+  40% {
+    transform: scale(1);
+    clip: rect(0, 24px, 24px, 0);
+  }
+
+  100% {
+    clip: rect(0, 24px, 24px, 0);
+  }
+}
+
+
+@media screen and (max-width: 750px) {
+
+  .container {
+    width: 100%;
+  }
+
+  .bond {
+    padding: 15px;
+  }
+}

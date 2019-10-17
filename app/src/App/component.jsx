@@ -4,6 +4,7 @@ import {Route} from "react-router";
 import {BrowserRouter as Router} from "react-router-dom";
 import {ROUTE_BASE} from "routes";
 import CharacterSelection from "CharacterSelection/component";
+import 'react-tabs/style/react-tabs.scss';
 
 const App = () => (
     <Router basename={process.env.PUBLIC_URL}>

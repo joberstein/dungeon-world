@@ -61,10 +61,12 @@ class Navigation extends React.Component {
     renderSmallNavigationOpened() {
         return (
             <div className={styles.container}>
-                <div className={styles.close}>
-                    <Close onClick={this.closeNavigation}/>
+                <div className={styles.modal}>
+                    <div className={styles.close}>
+                        <Close onClick={this.closeNavigation}/>
+                    </div>
+                    {this.renderNavigationLinks()}
                 </div>
-                {this.renderNavigationLinks()}
             </div>
         );
     }
