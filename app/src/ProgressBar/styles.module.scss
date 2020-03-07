@@ -2,6 +2,7 @@
   display: flex;
   align-items: center;
   width: 100%;
+  height: inherit;
 }
 
 .label {
@@ -13,8 +14,15 @@
   flex: 1 0 auto;
   display: flex;
   align-items: center;
-  height: 7px;
-  border-radius: 12px;
+  height: 100%;
+  position: relative;
+}
+
+.barBreak {
+  position: absolute;
+  background: white;
+  width: 2px;
+  height: 100%;
 }
 
 .progress {
@@ -23,7 +31,5 @@
   left: 0;
   bottom: 0;
   height: 100%;
-  border-radius: 12px 0 0 12px;
-  border-width: 1px;
-  border-style: solid;
+  border: none;
 }

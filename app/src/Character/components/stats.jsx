@@ -15,7 +15,9 @@ class CharacterStats extends React.Component {
                         <ProgressBar label={this.getStatLabel(stat[0], stat[1])}
                                      width={statBarWidth}
                                      progress={stat[1]}
-                                     color={this.getStatBarColor(stat[1])} />
+                                     color={this.getStatBarColor(stat[1])}
+                                     thickness={16}
+                                     maxSections={5} />
                     </div>
                 ))}
             </React.Fragment>
@@ -39,9 +41,9 @@ class CharacterStats extends React.Component {
             <span className={styles.statAbbreviation}>
                 {this.getStatAbbreviation(statName)}
             </span>
-            <sup className={styles.statModifier}>
+            <span className={styles.statModifier}>
                 {this.getStatModifier(statValue)}
-            </sup>
+            </span>
         </div>
     );
 

@@ -36,8 +36,8 @@
   flex: 0 0 auto;
   padding: 20px;
   box-sizing: border-box;
-  border: 1px solid #333;
-  border-radius: 12px;
+  border: 1px solid #AAA;
+  border-radius: 5px 5px 0 0;
   margin-bottom: 15px;
 }
 
@@ -71,22 +71,33 @@
 }
 
 .stat {
-  height: 21px;
-  margin-bottom: 8px;
+  height: 20px;
+  margin-bottom: 15px;
+}
+
+div.stat:last-of-type {
+  margin-bottom: 0;
 }
 
 .statLabel {
-  flex: 0 1 70px;
   display: flex;
-  justify-content: space-between;
+  align-items: center;
+  height: inherit;
+  flex: 0 0 75px;
 }
 
 .statAbbreviation {
   font-weight: 500;
+  flex: 0 0 35px;
+  display: inline-block;
+  text-align: center;
 }
 
 .statModifier {
-  margin-right: 10px;
+  font-size: 11px;
+  flex: 1 0 auto;
+  text-align: center;
+  display: inline-block;
 }
 
 @media screen and (max-width: 750px) {
