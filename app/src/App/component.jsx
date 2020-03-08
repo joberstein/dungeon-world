@@ -1,14 +1,16 @@
 import React from 'react';
 import { withAuthenticator } from 'aws-amplify-react';
-import {Route} from "react-router";
-import {BrowserRouter as Router} from "react-router-dom";
-import {ROUTE_BASE} from "routes";
+import {BrowserRouter as Router, Switch, Route, Redirect} from "react-router-dom";
 import CharacterSelection from "CharacterSelection/component";
 import 'react-tabs/style/react-tabs.scss';
+import * as routes from "routes";
 
 const App = () => (
     <Router basename={process.env.PUBLIC_URL}>
-        <Route path={ROUTE_BASE} component={CharacterSelection} />
+        <Switch>
+            <Route path={routes.ROUTE_CHARACTERS} component={CharacterSelection} />
+            <Redirect to={routes.ROUTE_CHARACTERS} />
+        </Switch>
     </Router>
 );
 

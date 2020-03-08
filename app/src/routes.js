@@ -1,6 +1,7 @@
-
-export const ROUTE_BASE = "/";
-export const ROUTE_CHARACTER = "/character";
+export const ROUTE_CHARACTERS = "/characters";
+export const ROUTE_CHARACTER_NEW = "/new";
+export const ROUTE_CHARACTER = `/:id`;
+export const ROUTE_ABOUT = `/about`;
 export const ROUTE_BONDS = "/bonds";
 export const ROUTE_SESSIONS = "/sessions";
 export const ROUTE_ACTIONS = "/actions";

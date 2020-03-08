@@ -1,9 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
-import {Link} from "react-router-dom";
+import {Link, withRouter} from "react-router-dom";
 import styles from "CharacterSummary/styles.module.scss";
 import Character from "Character/component";
-import * as routes from "routes";
 import barbarian from "CharacterSummary/img/barbarian-inverted.png";
 import bard from "CharacterSummary/img/bard-inverted.png";
 import cleric from "CharacterSummary/img/cleric-inverted.png";
@@ -14,9 +13,10 @@ import paladin from "CharacterSummary/img/paladin-inverted.png";
 import ranger from "CharacterSummary/img/ranger-inverted.png";
 import thief from "CharacterSummary/img/thief-inverted.png";
 import wizard from "CharacterSummary/img/wizard-inverted.png";
+import {ROUTE_ABOUT} from "routes";
 
-const CharacterSummary = ({character, onClick}) => (
-    <Link to={routes.ROUTE_CHARACTER} onClick={() => onClick(character.id)} className={styles.link}>
+const CharacterSummary = ({character, match}) => (
+    <Link to={`${match.url}/${character.id}${ROUTE_ABOUT}`} className={styles.link}>
         <div className={styles.summary}>
             <div className={styles.row}>
                 <h1>
@@ -55,13 +55,8 @@ const getClassIcon = specialty => {
     }
 };
 
-CharacterSummary.defaultProps = {
-    onClick: () => {}
-};
-
 CharacterSummary.propTypes = {
-    character: PropTypes.shape(Character.propTypes),
-    onClick: PropTypes.func
+    character: PropTypes.shape(Character.propTypes)
 };
 
-export default CharacterSummary;
+export default withRouter(CharacterSummary);

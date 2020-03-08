@@ -21,6 +21,39 @@
   justify-content: space-around;
 }
 
+.newCharacterLink {
+  text-decoration: none;
+  margin-top: 15px;
+}
+
+.newCharacterButton {
+  width: 240px;
+  display: block;
+  padding: 20px 0;
+  border: 0;
+  background-color: #00C0FF;
+  color: white;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.createCharacter {
+  height: 24px;
+  line-height: 24px;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon__add {
+  height: 100% !important; // override the default icon height
+  line-height: 100%;
+  margin-right: 5px;
+}
+
 @media screen and (max-width: 750px) {
   .container {
     width: 100%;

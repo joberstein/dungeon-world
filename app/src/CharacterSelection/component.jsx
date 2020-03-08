@@ -1,64 +1,57 @@
 import React from "react";
-import {BrowserRouter as Router} from "react-router-dom";
-import {Route, Switch} from "react-router";
+import {withRouter, Link, Route, Switch, Redirect} from "react-router-dom";
+import Add from "@material-ui/icons/Add";
 import CharacterSummary from "CharacterSummary/component";
 import styles from "CharacterSelection/styles.module.scss";
 import Character from "Character/component";
-import Bonds from "Bonds/component";
-import Navigation from "Navigation/component";
-import * as routes from "routes";
+import Icon from "Icon/component";
+import {ROUTE_CHARACTERS, ROUTE_CHARACTER, ROUTE_CHARACTER_NEW} from "routes";
 
 class CharacterSelection extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {characterId: undefined};
+        this.state = {characters};
     }
 
-    componentDidUpdate(prevProps, prevState, snapshot) {
-        const {pathname} = this.props.location;
-
-        if (pathname !== prevProps.location.pathname && pathname === routes.ROUTE_BASE) {
-            this.selectCharacter(undefined);
-        }
-    }
-
-    render = () => this.state.characterId ? this.renderRoutes() : this.renderCharacterOptions();
-
-    renderCharacterOptions = () => (
-        <div className={styles.container}>
-            <h1 className={styles.headerText}>
-                Your Characters
-            </h1>
-            <div className={styles.characters}>
-                {data.map(character => (
-                    <CharacterSummary character={character} onClick={this.selectCharacter} key={character.id} />
-                ))}
-            </div>
-        </div>
-    );
-
-    renderRoutes = () => (
-        <Router basename={this.props.match.path}>
-            <Navigation/>
+    render() {
+        return (
             <Switch>
-                <Route path={routes.ROUTE_CHARACTER} render={() => <Character {...this.getMockCharacterData()} />} />
-                <Route path={routes.ROUTE_BONDS} render={() => <Bonds bonds={this.getMockCharacterData().bonds}/>} />
-                <Route path={routes.ROUTE_SESSIONS} />
-                <Route path={routes.ROUTE_ACTIONS} />
-                <Route path={routes.ROUTE_BAG} />
-                <Route path={routes.ROUTE_BATTLE} />
-            </Switch>
-        </Router>
-    );
+                <Route path={this.props.match.path} exact strict render={({match}) => (
+                    <div className={styles.container}>
+                        <h1 className={styles.headerText}>
+                            Your Characters
+                        </h1>
+                        <div className={styles.characters}>
+                            {this.state.characters.map(character => (
+                                <CharacterSummary character={character} key={character.id} />
+                            ))}
+                        </div>
 
-    selectCharacter = characterId => this.setState({characterId});
-    getMockCharacterData = () => data.find(c => c.id === this.state.characterId);
+                        <Link to={`${match.path}${ROUTE_CHARACTER_NEW}`} className={styles.newCharacterLink}>
+                            <button className={styles.newCharacterButton}>
+                                    <Icon IconComponent={Add}
+                                          iconClassName={styles.createCharacter}
+                                          iconProps={{className: styles.icon__add}}
+                                          label="New Character" />
+                            </button>
+                        </Link>
+                    </div>
+                )} />
+
+                <Route path={`${this.props.match.path}${ROUTE_CHARACTER_NEW}`} render={() => {}} />
+                <Route path={`${this.props.match.path}${ROUTE_CHARACTER}`} render={props => <Character {...this.getCharacter(props)} />}/>
+                <Redirect to={ROUTE_CHARACTERS} />
+            </Switch>
+        );
+    }
+
+    getCharacter = props => this.state.characters.find(c => c.id === parseInt(props.match.params.id));
 }
 
-export default CharacterSelection;
+export default withRouter(CharacterSelection);
 
-const data = [
+const characters = [
     {
         id: 1,
         name: "Charf",

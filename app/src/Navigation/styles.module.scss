@@ -1,10 +1,15 @@
 .container {
   width: 100%;
   display: flex;
-  justify-content: space-around;
-  margin: 25px auto 10px;
+  align-items: center;
   border-bottom: 1px solid #333333;
-  padding-bottom: 25px;
+  height: 65px;
+}
+
+.links {
+  flex: 1 0 auto;
+  display: flex;
+  justify-content: space-around;
 }
 
 .link {
@@ -30,6 +35,23 @@
 
 .open {
   margin: 10px;
+}
+
+.menuIcon {
+  cursor: pointer;
+}
+
+.backButtonLink {
+  height: 100%;
+  display: flex;
+}
+
+.backButton {
+  background: white;
+  border: none;
+  cursor: pointer;
+  padding: 0 25px;
+  border-right: 1px solid black;
 }
 
 @media screen and (max-width: 1080px) {
