@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import styles from "Character/styles.module.scss";
+import styles from "Character/About/styles.module.scss";
 
 const Alignment = ({alignment}) => (
     <React.Fragment>

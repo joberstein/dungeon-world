@@ -1,7 +1,7 @@
 import React from 'react';
 import { withAuthenticator } from 'aws-amplify-react';
 import {BrowserRouter as Router, Switch, Route, Redirect} from "react-router-dom";
-import CharacterSelection from "CharacterSelection/component";
+import CharacterSelection from "Characters/component";
 import 'react-tabs/style/react-tabs.scss';
 import * as routes from "routes";
 

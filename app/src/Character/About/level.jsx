@@ -1,7 +1,7 @@
 import React from "react";
-import ProgressBar from "ProgressBar/component";
-import styles from "Character/styles.module.scss";
 import PropTypes from "prop-types";
+import ProgressBar from "ProgressBar/component";
+import styles from "Character/About/styles.module.scss";
 
 const Level = ({level, xp}) => (
   <React.Fragment>

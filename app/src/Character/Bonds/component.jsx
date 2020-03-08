@@ -1,10 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 import {Tabs, TabList, Tab, TabPanel} from "react-tabs";
-import Bond from "Bond/component";
+import Bond from "Character/Bonds/Bond/component";
 import Icon from "Icon/component";
 import Add from "@material-ui/icons/Add";
-import styles from "Bonds/styles.module.scss";
+import styles from "Character/Bonds/styles.module.scss";
 
 const TABS = ["To-Do", "Completed"];
 

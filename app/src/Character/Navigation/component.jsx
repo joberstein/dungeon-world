@@ -4,7 +4,7 @@ import Menu from "@material-ui/icons/Menu";
 import Close from "@material-ui/icons/Close";
 import Back from "@material-ui/icons/ArrowBack";
 import Media from "react-media";
-import styles from "Navigation/styles.module.scss";
+import styles from "Character/Navigation/styles.module.scss";
 import {ROUTE_ACTIONS, ROUTE_BAG, ROUTE_BATTLE, ROUTE_BONDS, ROUTE_ABOUT, ROUTE_SESSIONS, ROUTE_CHARACTERS} from "routes";
 
 const ROUTES = {

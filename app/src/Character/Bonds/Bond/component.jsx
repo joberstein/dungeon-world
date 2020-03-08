@@ -7,8 +7,8 @@ import Delete from "@material-ui/icons/Delete";
 import Check from "@material-ui/icons/Check";
 import Close from "@material-ui/icons/Clear";
 import Icon from "Icon/component";
-import styles from "Bond/styles.module.scss";
-import {CONFIRM_COMPLETE_MESSAGE, CONFIRM_REVOKE_MESSAGE, validateBond} from "Bond/utils";
+import styles from "Character/Bonds/Bond/styles.module.scss";
+import {CONFIRM_COMPLETE_MESSAGE, CONFIRM_REVOKE_MESSAGE, validateBond} from "Character/Bonds/Bond/utils";
 
 class Bond extends React.Component {
     constructor(props) {
